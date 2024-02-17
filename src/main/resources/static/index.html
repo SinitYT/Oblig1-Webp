@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bestilling av Kinobilletter</title>
+</head>
+<body>
+<h1>Bestilling av kinobiletter</h1>
+
+<form action="/booking" method="post">
+    <label for="movie">Velg film:</label>
+    <select name="movie" id="movie">
+        <option value="">Velg film her</option>
+        <option value="movie1">Movie 1</option>
+        <option value="movie2">Movie 2</option>
+        <option value="movie3">Movie 3</option>
+    </select>
+    <br>
+
+    <label for="antall">Antall billetter:</label>
+    <input type="number" name="antall" id="antall" min="1">
+    <br>
+
+    <label for="fornavn">Fornavn:</label>
+    <input type="text" name="fornavn" id="fornavn" required>
+    <br>
+
+    <label for="etternavn">Etternavn:</label>
+    <input type="text" name="etternavn" id="etternavn" required>
+    <br>
+
+    <label for="telefonnr">Telefonnr:</label>
+    <input type="tel" name="telefonnr" id="telefonnr" required>
+    <br>
+
+    <label for="epost">Epost:</label>
+    <input type="email" name="epost" id="epost" required>
+    <br>
+
+    <button type="submit">Kjøp billett</button>
+</form>
+<br>
+
+<p>Alle billetter</p>
+<br>
+<button>Slett alle billettene</button>
+
+</body>
+</html>
