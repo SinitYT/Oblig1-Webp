@@ -8,7 +8,7 @@
 <body>
 <h1>Bestilling av kinobiletter</h1>
 
-<form action="/booking" method="post">
+<form id="bookingForm" action="/booking" method="post">
     <label for="movie">Velg film:</label>
     <select name="movie" id="movie">
         <option value="">Velg film her</option>
@@ -19,7 +19,7 @@
     <br>
 
     <label for="antall">Antall billetter:</label>
-    <input type="number" name="antall" id="antall" min="1">
+    <input type="number" name="antall" id="antall" min="1" required>
     <br>
 
     <label for="fornavn">Fornavn:</label>
@@ -31,7 +31,7 @@
     <br>
 
     <label for="telefonnr">Telefonnr:</label>
-    <input type="tel" name="telefonnr" id="telefonnr" required>
+    <input type="tel" name="telefonnr" id="telefonnr" pattern="[0-9]{8}" required>
     <br>
 
     <label for="epost">Epost:</label>
@@ -42,9 +42,10 @@
 </form>
 <br>
 
-<p>Alle billetter</p>
+<p>Alle billetter:</p>
+<ul id="ticketList"></ul>
 <br>
-<button>Slett alle billettene</button>
+<button id="deleteTicketsBtn">Slett alle billettene</button>
 
 </body>
 </html>
