@@ -3,49 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
     <title>Bestilling av Kinobilletter</title>
 </head>
+
 <body>
-<h1>Bestilling av kinobiletter</h1>
+<div class="container">
+    <h1>Bestilling av kinobiletter</h1>
 
-<form id="bookingForm" action="/booking" method="post">
-    <label for="movie">Velg film:</label>
-    <select name="movie" id="movie">
-        <option value="">Velg film her</option>
-        <option value="movie1">Movie 1</option>
-        <option value="movie2">Movie 2</option>
-        <option value="movie3">Movie 3</option>
-    </select>
-    <br>
+    <form id="bookingForm" action="/booking" method="post">
+        <label for="movie">Velg film:</label>
+        <select name="movie" id="movie">
+            <option value="">Velg film her</option>
+            <option value="movie1">Movie 1</option>
+            <option value="movie2">Movie 2</option>
+            <option value="movie3">Movie 3</option>
+        </select>
 
-    <label for="antall">Antall billetter:</label>
-    <input type="number" name="antall" id="antall" min="1" required>
-    <br>
+        <label for="antall">Antall billetter:</label>
+        <input type="number" name="antall" id="antall" min="1" required>
 
-    <label for="fornavn">Fornavn:</label>
-    <input type="text" name="fornavn" id="fornavn" required>
-    <br>
+        <label for="fornavn">Fornavn:</label>
+        <input type="text" name="fornavn" id="fornavn" required>
 
-    <label for="etternavn">Etternavn:</label>
-    <input type="text" name="etternavn" id="etternavn" required>
-    <br>
+        <label for="etternavn">Etternavn:</label>
+        <input type="text" name="etternavn" id="etternavn" required>
 
-    <label for="telefonnr">Telefonnr:</label>
-    <input type="tel" name="telefonnr" id="telefonnr" pattern="[0-9]{8}" required>
-    <br>
+        <label for="telefonnr">Telefonnr:</label>
+        <input type="tel" name="telefonnr" id="telefonnr" pattern="[0-9]{8}" required>
 
-    <label for="epost">Epost:</label>
-    <input type="email" name="epost" id="epost" required>
-    <br>
+        <label for="epost">Epost:</label>
+        <input type="email" name="epost" id="epost" required>
 
-    <button type="submit">Kjøp billett</button>
-</form>
-<br>
+        <button type="submit">Kjøp billett</button>
+    </form>
 
-<p>Alle billetter:</p>
-<ul id="ticketList"></ul>
-<br>
-<button id="deleteTicketsBtn">Slett alle billettene</button>
+    <p>Alle billetter:</p>
+    <ul id="ticketList"></ul>
+
+    <button id="deleteTicketsBtn">Slett alle billettene</button>
+</div>
 <script src="script.js"></script>
 
 </body>
