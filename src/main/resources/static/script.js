@@ -15,7 +15,8 @@ bookingForm.addEventListener('submit', function (event) {
     const telefonnr = bookingForm.telefonnr.value;
     const epost = bookingForm.epost.value;
 
-    if (movie && antall && fornavn && etternavn && telefonnr && epost) {
+    // Validere inputs
+    if (validateInputs(movie, antall, fornavn, etternavn, telefonnr, epost)) {
         const ticket = {
             movie: movie,
             antall: antall,
@@ -28,8 +29,6 @@ bookingForm.addEventListener('submit', function (event) {
         tickets.push(ticket);
         renderTickets();
         clearInputs();
-    } else {
-        alert('Alle feltene må fylles ut.');
     }
 });
 
@@ -51,4 +50,25 @@ function clearInputs() {
     inputs.forEach(function (input) {
         input.value = '';
     });
+}
+
+function validateInputs(movie, antall, fornavn, etternavn, telefonnr, epost) {
+    if (!movie || !antall || !fornavn || !etternavn || !telefonnr || !epost) {
+        alert('Alle feltene må fylles ut.');
+        return false;
+    }
+
+    // Validere telefonnr
+    if (!(/^\d{8}$/.test(telefonnr))) {
+        alert('Telefonnummeret må være 8 siffer.');
+        return false;
+    }
+
+    // Validate epost
+    if (!(/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(epost))) {
+        alert('Vennligst skriv inn en gyldig epostadresse.');
+        return false;
+    }
+
+    return true;
 }
